@@ -112,9 +112,7 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.booking-form input.date-input {
-    /* Estilização adicional para o input de data, se necessário */
-}
+
 
 .submit-button {
     display: block;
