@@ -12,6 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const todayFormatted = today.toISOString().split('T')[0];
     dateInput.min = todayFormatted;
 
+    // --- LISTA DE AGENDAMENTOS JÁ OCUPADOS (SIMULAÇÃO) ---
+    // Em um site real, essa lista viria de um banco de dados.
+    const bookedAppointments = [
+        { date: '2025-08-05', time: '10:00' },
+        { date: '2025-08-06', time: '14:30' },
+        { date: '2025-08-07', time: '09:00' },
+    ];
+    // ----------------------------------------------------
+
     // Lista de feriados nacionais e municipais de Natal/RN para 2025 (MM-DD)
     const holidays = [
         '01-01', // Ano Novo (Nacional)
@@ -63,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const selectedDate = new Date(`${date}T00:00:00`); // Cria um objeto de data para validação
-            const dayOfWeek = selectedDate.getDay(); // 0 = Domingo, 1 = Segunda...
+            const selectedDate = new Date(`${date}T00:00:00`);
+            const dayOfWeek = selectedDate.getDay();
 
             // Validação de dia da semana (Terça a Sábado)
             if (dayOfWeek < 2 || dayOfWeek > 6) {
@@ -88,9 +97,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 showError('O salão funciona de 08:00h às 18:00h. Por favor, escolha outro horário.');
                 return;
             }
+
+            // --- NOVA VALIDAÇÃO DE CONFLITO ---
+            const isBooked = bookedAppointments.some(appointment =>
+                appointment.date === date && appointment.time === time
+            );
+
+            if (isBooked) {
+                showError('Este horário já está agendado. Por favor, escolha outro.');
+                return;
+            }
             
             // Se todas as validações passarem, exibe a confirmação
-            const message = `Olá, ${name}! Seu agendamento para ${service} no dia ${date} às ${time} foi confirmado com sucesso. Aguardamos sua visita em nosso salão!`;
+            const message = `Olá, ${name}! Seu agendamento para **${service}** no dia **${date}** às **${time}** foi registrado com sucesso e está pendente de confirmação. Aguarde nosso contato.`;
             showConfirmationModal(message);
             bookingForm.reset();
         });
