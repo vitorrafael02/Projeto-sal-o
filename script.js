@@ -1,45 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
     const bookingForm = document.getElementById('booking-form');
     const confirmationMessage = document.getElementById('confirmation-message');
+    
+    // Novas referências para o pop-up
+    const bookingModal = document.getElementById('booking-modal');
+    const modalMessage = document.getElementById('modal-message');
+    const modalCloseButton = document.querySelector('.modal-close-button');
 
     if (bookingForm) {
         bookingForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Impede o envio padrão do formulário
+            event.preventDefault();
 
-            // Captura os valores do formulário
             const name = document.getElementById('name').value;
             const service = document.getElementById('service').value;
             const date = document.getElementById('date').value;
             const time = document.getElementById('time').value;
 
-            // Validação simples para garantir que todos os campos foram preenchidos
             if (name && service && date && time) {
-                // Monta a mensagem de confirmação
+                // Monta a mensagem para o pop-up
                 const message = `Olá, ${name}! Seu agendamento para **${service}** no dia **${date}** às **${time}** foi confirmado com sucesso. Aguardamos sua visita em Petrópolis!`;
+                
+                // Exibe a mensagem no pop-up
+                modalMessage.textContent = message;
+                
+                // Exibe o pop-up
+                bookingModal.classList.add('active');
 
-                // Exibe a mensagem de confirmação na tela
-                confirmationMessage.textContent = message;
-                confirmationMessage.style.display = 'block';
-                confirmationMessage.style.color = '#28a745'; // Define a cor de sucesso
-
-                // Opcional: Limpa o formulário após o envio
+                // Limpa o formulário
                 bookingForm.reset();
             } else {
-                // Mensagem de erro caso algum campo esteja vazio
+                // Se algum campo estiver vazio, exibe a mensagem de erro no local original
                 confirmationMessage.textContent = 'Por favor, preencha todos os campos do formulário.';
-                confirmationMessage.style.color = '#dc3545'; // Define a cor de erro
+                confirmationMessage.style.color = '#dc3545';
                 confirmationMessage.style.display = 'block';
             }
         });
     }
 
-    // Adiciona um ouvinte de evento para personalizar o visual do input de data (opcional)
-    const dateInput = document.querySelector('.date-input');
-    if (dateInput) {
-        dateInput.addEventListener('focus', () => {
-            // Você pode adicionar aqui alguma lógica para manipular o visual do calendário
-            // Por exemplo, abrir um seletor de data customizado, se desejar.
-            // Para o visual padrão do navegador, este evento de foco já ativa o calendário.
+    // Fecha o pop-up ao clicar no botão 'x'
+    if (modalCloseButton) {
+        modalCloseButton.addEventListener('click', () => {
+            bookingModal.classList.remove('active');
+        });
+    }
+
+    // Fecha o pop-up ao clicar fora da caixa do modal
+    if (bookingModal) {
+        bookingModal.addEventListener('click', (event) => {
+            if (event.target === bookingModal) {
+                bookingModal.classList.remove('active');
+            }
         });
     }
 });
