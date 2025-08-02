@@ -1,76 +1,74 @@
 <!DOCTYPE html>
- <html lang="pt-BR">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Agendamento Salão de Beleza</title>
-     <link rel="stylesheet" href="style.css">
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
- </head>
- <body>
- 
-     <header class="header">
-         <h1 class="header-title">Rouge Coiffure</h1>
-         <p class="header-subtitle">Agende seu horário com a gente e brilhe!</p>
-         <img src="fachada.jpg" alt="Fachada do Salão de Beleza" class="header-image">
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rouge Coiffure</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-     </header>
- 
-     <main class="main-content">
-         <section class="about-us-section">
-             <h2 class="section-title">Quem Somos</h2>
-             <p>Localizado no coração de Petrópolis, nós atuamos há 14 anos, dedicando-se a realçar a beleza única de cada cliente. Somos especialistas em loiros luminosos, técnicas de iluminação capilar que proporcionam um brilho natural e sofisticado, e tratamentos redutores que cuidam da saúde e da forma dos seus cabelos. Nossa paixão é transformar e elevar a sua autoestima.</p>
-         </section>
- 
-         <div class="sections-container">
-             <section class="booking-section">
-                 <h2 class="section-title">Agendar Horário</h2>
-                 <form id="booking-form" class="booking-form">
-                     <div class="form-group">
-                         <label for="name">Seu Nome:</label>
-                         <input type="text" id="name" name="name" required>
-                     </div>
-                     <div class="form-group">
-                         <label for="service">Serviço:</label>
-                         <select id="service" name="service" required>
-                             <option value="">Selecione um serviço...</option>
-                             <option value="Corte de Cabelo">Corte de Cabelo</option>
-                             <option value="Manicure e Pedicure">Manicure e Pedicure</option>
-                             <option value="Escova e Hidratação">Escova e Hidratação</option>
-                             <option value="Maquiagem">Maquiagem</option>
-                             <option value="Design de Sobrancelha">Design de Sobrancelha</option>
-                             <option value="Loiros e Iluminados">Loiros e Iluminados</option>
-                             <option value="Tratamentos Redutores">Tratamentos Redutores</option>
-                         </select>
-                     </div>
-                     <div class="form-group">
-                         <label for="date">Data:</label>
-                         <input type="date" id="date" name="date" class="date-input" required>
-                     </div>
-                     <div class="form-group">
-                         <label for="time">Horário:</label>
-                         <input type="time" id="time" name="time" required>
-                     </div>
-                     <button type="submit" class="submit-button">Confirmar Agendamento</button>
-                 </form>
-                 <p id="confirmation-message" class="confirmation-message"></p>
-             </section>
- 
-             <section class="contact-section">
-                 <h2 class="section-title">Prefere agendar por telefone?</h2>
-                 <div class="contact-info">
-                     <p>Entre em contato com nossa equipe de atendimento:</p>
-                     <p>Telefone: <strong>3222-9946</strong></p>
-                     <p>WhatsApp: <a href="http://wa.me/5584986233599" target="_blank" class="whatsapp-link">(84) 98623-3599</a></p>
-                 </div>
-             </section>
-         </div>
-     </main>
- 
-     <footer class="footer">
-         <p>&copy; 2025 Rouge Coiffure. Todos os direitos reservados.</p>
-     </footer>
- 
-     <script src="script.js"></script>
- </body>
- </html>
+    <header class="header">
+        <h1 class="header-title">Rouge Coiffure</h1>
+        <p class="header-subtitle">Agende seu horário com a gente e brilhe!</p>
+    </header>
+
+    <main class="main-content">
+        <section class="about-us-section">
+            <h2 class="section-title">Quem Somos</h2>
+            <p>Localizado no coração de Petrópolis, nós atuamos há 14 anos, dedicando-se a realçar a beleza única de cada cliente. Somos especialistas em loiros luminosos, técnicas de iluminação capilar que proporcionam um brilho natural e sofisticado, e tratamentos redutores que cuidam da saúde e da forma dos seus cabelos. Nossa paixão é transformar e elevar a sua autoestima.</p>
+        </section>
+
+        <div class="sections-container">
+            <section class="booking-section">
+                <h2 class="section-title">Agendar Horário</h2>
+                <form id="booking-form" class="booking-form">
+                    <div class="form-group">
+                        <label for="name">Seu Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Serviço:</label>
+                        <select id="service" name="service" required>
+                            <option value="">Selecione um serviço...</option>
+                            <option value="Corte de Cabelo">Corte de Cabelo</option>
+                            <option value="Manicure e Pedicure">Manicure e Pedicure</option>
+                            <option value="Escova e Hidratação">Escova e Hidratação</option>
+                            <option value="Maquiagem">Maquiagem</option>
+                            <option value="Design de Sobrancelha">Design de Sobrancelha</option>
+                            <option value="Loiros e Iluminados">Loiros e Iluminados</option>
+                            <option value="Tratamentos Redutores">Tratamentos Redutores</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Data:</label>
+                        <input type="date" id="date" name="date" class="date-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Horário:</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    <button type="submit" class="submit-button">Confirmar Agendamento</button>
+                </form>
+                <p id="confirmation-message" class="confirmation-message"></p>
+            </section>
+
+            <section class="contact-section">
+                <h2 class="section-title">Prefere agendar por telefone?</h2>
+                <div class="contact-info">
+                    <p>Entre em contato com nossa equipe de atendimento:</p>
+                    <p>Telefone: <strong>3222-9946</strong></p>
+                    <p>WhatsApp: <a href="http://wa.me/5584986233599" target="_blank" class="whatsapp-link">(84) 98623-3599</a></p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Rouge Coiffure. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
