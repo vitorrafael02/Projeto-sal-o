@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             // Se todas as validações passarem, exibe a confirmação
-            const message = `Olá, ${name}! Seu agendamento para ${service} no dia ${date} às ${time} foi confirmado com sucesso. Aguardamos sua visita em Petrópolis!`;
+            const message = `Olá, ${name}! Seu agendamento para ${service} no dia ${date} às ${time} foi confirmado com sucesso. Aguardamos sua visita em nosso salão!`;
             showConfirmationModal(message);
             bookingForm.reset();
         });
